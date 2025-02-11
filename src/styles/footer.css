@@ -1,0 +1,220 @@
+.rodape{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    text-align: center;
+    background-color: var(--primary-color);
+    border-radius: 1.25rem 1.25rem 0 0;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.rodape__text{
+    font-size: .9rem;
+    padding-top: .5rem;
+    color: var(--secondary-font-color);
+}
+
+.rodape__img{
+    width: 1rem;
+}
+
+.rodape__text:hover,
+.rodape__img:hover ~ .rodape__text {
+    color: var(--blue-color);
+}
+
+/* Buttons */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+.floating-btn__plus{
+    position: fixed;
+    bottom: 4.5rem;
+    right: .25rem;
+    z-index: 5;
+}
+
+.floating-btn__pin, .floating-btn__cam{
+    display: none;
+    position: fixed;
+    right: .25rem;
+    bottom: 9.5rem;
+    z-index: 5;
+}
+
+.floating-btn__pin{
+    bottom: 14.5rem;
+}
+
+.floating-btn__text{
+    display: none;
+    background-color: var(--primary-color);
+    border-radius: 5rem;
+    position: fixed;
+    right: 5.5rem;
+    z-index: 5;
+    bottom: 9.5rem;
+    padding: .5rem .75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.floating-btn__text.home{
+    bottom: 16.5rem;
+}
+
+.floating-btn__text.video{
+    bottom: 11.5rem;
+}
+
+.floating-btn__plus:focus ~ .floating-btn__pin,
+.floating-btn__plus:focus ~ .floating-btn__cam,
+.floating-btn__plus:focus ~ .floating-btn__text,
+.floating-btn__plus:focus ~ .overlay {
+    display: block;
+}
+
+/* Formulario */
+
+
+.form{
+    display: none;
+    margin: 2rem;
+    padding: 1.5rem 2rem 0 2rem;
+    background-color: var(--primary-color);
+    border-radius: .5rem;
+}
+
+.form-title{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 4rem;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group label, .form-group__label{
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 1.5rem 0 .5rem 0;
+    font-family: var(--primary-font);
+}
+
+.form-group input{
+    padding: .3rem;
+    border: 1px solid var(--secondary-font-color);
+    border-radius: .3rem;
+    width: 60%;
+    padding: .5rem;
+    font-size: .75rem;
+    font-family: var(--primary-font);
+    cursor: text;
+}
+
+.form-group__radio{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid var(--secondary-font-color);
+    width: 61.5%;
+    border-radius: .3rem;
+    padding: .2rem;
+}
+
+.form-group__radio div{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 1.1rem;
+}
+
+.form-group__radio label{
+    font-size: .75rem;
+    font-weight: 500;
+    padding: 0 0 .75rem 0;
+    font-family: var(--primary-font);
+}
+
+.form-group__radio input{
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+}
+
+.form-group textarea{
+    border: 1px solid var(--secondary-font-color);
+    border-radius: .3rem;
+    width: 85%;
+    padding: .5rem;
+    font-size: .75rem;
+    font-family: var(--primary-font);
+    height: 60%;
+    resize: none;
+}
+
+.form-btn{
+    background-color: var(--blue-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: .5rem;
+    padding: .75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 3.5rem;
+    cursor: pointer;
+    width: 100%;
+    margin: 5rem auto 3.5rem auto;
+}
+
+@media screen and (min-width: 768px){
+    .floating-btn__text{
+        right: 4.25rem;
+    }
+
+    .floating-btn__text.home{
+        bottom: 15.75rem;
+    }
+    
+    .floating-btn__text.video{
+        bottom: 10.75rem;
+    }
+    
+}
+
+@media screen and (min-width: 1440px){
+    .rodape{
+        display: none;
+    }
+
+    .floating-btn{
+        display: none;
+    }
+
+    .form{
+        display: block;
+    }
+}
